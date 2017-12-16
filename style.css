@@ -1,0 +1,262 @@
+body {
+    background: url("https://cdn.pbrd.co/images/GQRw58Q.jpg") no-repeat;
+    background-size: cover;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 1.6rem;
+
+}
+
+
+
+/*************************************** START ANIMATIONS **********************************************/
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.3;
+    }
+}
+@keyframes notesDropping {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: 600px;
+    }
+}
+
+
+@keyframes disappear {
+    0% {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    40% {
+        position: relative;
+        top: -650px;
+        left: 0px;
+        right: 0;
+    }
+    100% {
+        position: relative;
+        top: -850px;
+        left: 0px;
+        right: 0;
+    }
+}
+
+/*************************************** END ANIMATIONS **********************************************/
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    background: red;
+    position: absolute;
+    left: 6.1rem;
+    top: 2.5rem;
+}
+h3 {
+    color: white;
+    font-size: 2.5rem;
+    background: red;
+    position: absolute;
+    left: 5rem;
+    top: 7rem;
+}
+#container {
+    width: 30%;
+    height: 70%;
+    background: #f46542;
+    margin: 5% auto;
+    border-radius: 1%;
+    position: relative;
+    box-shadow: 0.5rem 0.5rem #0f6fd8, 1rem 1rem #e82218, 1rem 1rem 4rem;
+    cursor:move;
+}
+
+#container.animation {
+    animation: notesDropping 3s;
+}
+#container.orange {
+    background: #f46542;
+    box-shadow: 0.5rem 0.5rem #0f6fd8, 1rem 1rem #e82218, 1rem 1rem 4rem;
+}
+#container.blue {
+    background: #0f6fd8;
+    box-shadow: 0.5rem 0.5rem #e82218, 1rem 1rem #f46542, 1rem 1rem 4rem;
+}
+#container.red {
+    background: #e82218;
+    box-shadow: 0.5rem 0.5rem #f46542, 1rem 1rem #0f6fd8, 1rem 1rem 4rem;
+}
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2%;
+}
+input[type="button"],
+input[type="text"] {
+    padding: 10px;
+}
+
+.fa-pencil {
+    position: absolute;
+    bottom: 2%;
+    left: 60%;
+}
+#pin img {
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#pin.disappear {
+    animation: disappear 3s;
+}
+input[type="text"] {
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+}
+
+#addBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    cursor: pointer;
+}
+#removeBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12%;
+    background: black;
+    color: white;
+    border: 0px;
+    cursor: pointer;
+}
+.error {
+    color: white;
+    font-weight: bold;
+}
+.error:after {
+    content: "Type something and click the 'Add to list' button."
+}
+.correct {
+    color: blue;
+    font-weight: bold;
+}
+.correct:before {
+    content: "Added new list item: "
+}
+.remove {
+    color: green;
+    font-weight: bold;
+}
+.remove:before {
+    content: "Removed last list item: "
+}
+.fa-check {
+    color: green;
+}
+.fa-times-circle {
+    color: red;
+}
+li:nth-of-type(1n+8) {
+    display: none;
+}
+.info {
+    position: absolute;
+    bottom: 1.25rem;
+}
+#grab {
+    position: absolute;
+    right: 3.7rem;
+    top: 2.5rem;
+    color: white;
+}
+.fa-hand-o-down {
+    position: absolute;
+    right: 2.1rem;
+    top: 2.5rem;
+    color: white;
+    transform: rotate(180deg);
+    animation: blink 1s infinite;
+}
+.colors {
+    display: table;
+    color: black;
+    position: absolute;
+    right: 5rem;
+    top: 4.5rem;
+    width: 90px;
+    height: 30px;
+}
+#orange {
+    display: table-cell;
+    background: #f46542;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#blue {
+    display: table-cell;
+    background: #0f6fd8;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#red {
+    display: table-cell;
+    background: #e82218;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+@media all and (max-width: 850px) {
+#container {
+    width: 85%;
+    height:70%;
+    margin-top:3rem;
+    font-size:1.5rem;
+}
+
+#grab {
+    right:.2rem;
+    top:0;
+}
+.colors {
+    top:1.9rem;
+    right:1.3rem;
+}
+
+h1,h3 {
+position:static;
+width:40%;
+font-size:1.3rem;
+}
+
+.fa.fa-pencil {
+font-size:1.5rem;
+}
+
+}
+
+@media all and (max-width:397px) {
+    #container {
+height:76%;
+    }
+}
+
+@media all and (max-height:1000px) {
+    #container {
+height:450px;
+    }
+}
